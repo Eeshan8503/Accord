@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@900&family=Zen+Maru+Gothic&display=swap');
+h1{
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Zen Maru Gothic', sans-serif;
+}
+.login-btn{
+    background-color: white;
+    border: 2px solid #435566;
+    border-radius: 2em;
+    padding: 1em;
+    font-size: 1em;
+    cursor: pointer;
+    transition-duration: 1s;
+}
+.login-btn:hover{
+    border-radius: 1em;
+    background-color:#435566 ;
+    color: white;
+}
