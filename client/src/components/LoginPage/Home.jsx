@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import './style.css'
 import Slide1 from './../../assets/slide1.jpg'
 import Slide2 from './../../assets/Slide2.jpg'
@@ -57,6 +57,7 @@ class Home extends React.Component {
 		}
 		setInterval(this._changeActive(i++), 200);
 	}
+	
 	render() {
 		return (
 			<section className="wrapper" style={this.state.wrapperStyle}>

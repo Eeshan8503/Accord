@@ -3,7 +3,7 @@ import Logo from './../../assets/Accord-logo.svg'
 import './styles.css'
 const Navbar = () => {
   return (
-    <div className="navv" >
+    <div className="navv" style={{backgroundColor:'rgba(0,0,0)'}} >
     <div className='image'>
         {/* <img src={Logo} height={50} width={300} alt='sa'></img> */}
         <p>Accord</p>

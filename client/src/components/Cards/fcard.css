@@ -1,0 +1,22 @@
+.main-card{
+    width: 75%;
+    height: 80vh;
+    border: 2px solid black;
+    position: absolute;
+    top:17%;
+    left:13%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.photo{
+    width: 40%;
+    height: 100%;   
+    overflow: hidden;
+}
+.photo img{
+    float: left;
+    height: 100%;
+    width: 100%;
+    
+}
