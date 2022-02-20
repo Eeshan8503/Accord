@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, createContext } from 'react';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import './styles.css'
 import Logo from './../../assets/Accord-logo.svg'
@@ -31,12 +31,12 @@ const interact = {
       preserveAspectRatio: "xMidYMid slice"
     }
   };
-function Login() {
+function Login({setter}) {
 
     const [showloginButton, setShowloginButton] = useState(true);
     const [showlogoutButton, setShowlogoutButton] = useState(false);
     const onLoginSuccess = (res) => {
-        console.log('Login Success:', res.profileObj);
+        setter(res.profileObj)
         setShowloginButton(false);
         setShowlogoutButton(true);
     };
@@ -53,17 +53,32 @@ function Login() {
     };
 
     return (
-        <div style={{display:"flex"}}>
-            <div style={{height:"100vh",width:"50%", backgroundColor:"#f4f8f9", display:'flex',alignItems:'center',flexDirection:"column"}}>
-                <img src={Logo} style={{height:"30%", width:"80%"}} alt="logo" />
-                <h1 style={{fontSize:"3em"}}>Welcome to Accord</h1>
+        <div style={{display:"flex", flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
+        <div style={{position:'absolute',left:0,top:0,zIndex:-1}}>
+            <Lottie 
+	                options={fallingLeaf}
+                    height={400}
+                    width={400}
+                 />
+            </div>
+            
+            <div style={{position:'absolute',right:0,top:0,zIndex:-1}}>
+            <Lottie 
+	                options={fallingLeafR}
+                    height={300}
+                    width={300}
+                 />
+            </div>
+        <img src={Logo} style={{height:"45%", width:"45%"}} alt="logo" />
+            {/* <div style={{height:"100vh",width:"50%", backgroundColor:"transparent", display:'flex',alignItems:'center',justifyContent:'center',flexDirection:"column"}}>
+                <h1 style={{fontSize:"3em"}}>Welcome</h1>
                 <Lottie 
 	                 options={interact}
                      height={400}
                     width={400}
                  />
             </div>
-            <div style={{position:'absolute',left:'50%',zIndex:-1}}>
+            <div style={{position:'absolute',left:0,zIndex:-1}}>
             <Lottie 
 	                options={fallingLeaf}
                     height={400}
@@ -76,10 +91,10 @@ function Login() {
                     height={300}
                     width={300}
                  />
-            </div>
-            <div style={{height:"100vh", display:"flex",flexDirection:'column', width:'50%',alignItems:'center'}}>
+            </div> */}
+            <div>
            
-            <h1 style={{marginTop:'20%',fontSize:90}}>Login</h1>
+            <h1 className='head' style={{marginTop:'5%',fontSize:'3em'}}>Login</h1>
             { showloginButton ?
                 <GoogleLogin
                     clientId={clientId}

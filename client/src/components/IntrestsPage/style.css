@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Nunito+Sans:wght@900&family=Zen+Maru+Gothic&display=swap');
+.dp{
+    
+    margin-top: 2em;
+}
+h3{
+    font-family: 'Zen Maru Gothic', sans-serif;
+}
+.logoName{
+    font-family: 'Audiowide', cursive;
+    font-size: 30px;
+    margin-top: 1.75em;
+}
+.title{
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 1em;
+    line-height: 0.5em;
+}
+.int{
+    text-align: center;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    
+
+}
+.btn{
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-weight: bold;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    background-color: #548cff;
+    height: 70px;
+    width: 220px;
+    text-align: center;
+    align-items: center;
+    font-size: 25px;
+    margin-bottom:0.5em ;
+    border-radius: 40px;
+    cursor: pointer;
+    transition-duration: 0.25s;
+}
+.btn:hover{
+    transform: scale(1.1);
+}
+.headder{
+    background-color:#B3ECF1;
+    position:relative;
+    z-index:-1;
+    filter: drop-shadow(0px 5px 12px black);
+}
