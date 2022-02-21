@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './style.css'
+import classes from './style.module.css'
 import Slide1 from './../../assets/slide1.jpg'
 import Slide2 from './../../assets/Slide2.jpg'
 import Slide3 from './../../assets/Slide3.jpg'
@@ -60,7 +60,9 @@ class Home extends React.Component {
 	
 	render() {
 		return (
-			<section className="wrapper" style={this.state.wrapperStyle}>
+			
+
+			<section className={classes.wrapper} style={this.state.wrapperStyle}>
 				<Selectors 
 					data={this.props.data}
 					activeID={this.state.activeID}
@@ -73,22 +75,23 @@ class Home extends React.Component {
 					_buttonColour={this._buttonColour.bind(this)}
 				/>
 			</section>
+			
 		);
 	}
 }
 class Panel extends React.Component {
 	render() {
 		return (
-			<aside className="panel" style={this.props.panelStyle}>
-				<h2 className="panel-header">{this.props.data.header}</h2>
-				<p className="panel-info">{this.props.data.body}</p>
-				{this.props.data.id===0 ? <div><button className="panel-button" 
+			<aside className={classes.panel} style={this.props.panelStyle}>
+				<h2 className={classes['panel-header']}>{this.props.data.header}</h2>
+				<p className={classes["panel-info"]}>{this.props.data.body}</p>
+				{this.props.data.id===0 ? <div><button className={classes["panel-button"]} 
 					style={this.props.buttonStyle}
 					onMouseEnter={this.props._buttonColour}
 					onMouseLeave={this.props._buttonColour}>
 					Sign up
 				</button>
-				<button className="panel-button" 
+				<button className={classes["panel-button"]} 
 					style={this.props.buttonStyle}
 					onMouseEnter={this.props._buttonColour}
 					onMouseLeave={this.props._buttonColour}>
@@ -109,7 +112,7 @@ class Selectors extends React.Component {
 	}
 	render() {
 		return (
-			<div className="selectors">
+			<div className={classes.selectors}>
 				{this.props.data.map((item) => 
 					<Selector 
 						key={item.id}
@@ -126,11 +129,14 @@ class Selectors extends React.Component {
 class Selector extends React.Component {
 	render() {
 		let componentClass = 'selector';
+		let componentClasss = '';
 		if (this.props.activeID === this.props.id) {
-			componentClass = 'selector active';
+			componentClass = 'selector';
+			componentClasss = 'active';
+
 		}
 		return (
-			<div className={componentClass} onClick={this.props._handleClick.bind(this)}></div>
+			<div className={`${classes[componentClasss]} ${classes[componentClass]}`} onClick={this.props._handleClick.bind(this)}></div>
 		);
 	}
 }

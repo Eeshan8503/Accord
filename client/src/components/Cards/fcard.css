@@ -1,22 +1,56 @@
 .main-card{
     width: 75%;
-    height: 80vh;
+    height: 60vh;
     border: 2px solid black;
-    position: absolute;
-    top:17%;
-    left:13%;
+    /* margin-top: 13%; */
+    margin-left: 13%;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    /* justify-content: space-evenly; */
 }
 .photo{
-    width: 40%;
+    width: 50%;
     height: 100%;   
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .photo img{
-    float: left;
-    height: 100%;
+    /* float: left; */
+    height: 99.1%;
     width: 100%;
-    
+    border: 2px solid black;
 }
+.content-container{
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* grid-template-rows: 0.5fr; */
+    font-family: 'Zen Maru Gothic', sans-serif;
+    margin-left: 5%;
+}
+.marquee {
+    height: 25px;
+    width: 100%;
+  
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .marquee div {
+    display: block;
+    width: 200%;
+    height: 30px;
+  
+    position: absolute;
+    overflow: hidden;
+  
+    animation: marquee 15s linear infinite;
+  }
+  
+  .marquee span {
+    float: left;
+    width: 50%;
+  }
+  
+  @keyframes marquee {
+    0% { left: 0; }
+    100% { left: -100%; }
+  }
